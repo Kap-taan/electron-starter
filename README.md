@@ -1,9 +1,7 @@
 ---
-
 # 🚀 Electron App Starter with React, Node, and TypeScript
 
-A modern starter template for building desktop apps using **Electron**, **React 19**, **TypeScript**, and **Vite**. It supports fast development with HMR for React and production-ready builds across **macOS**, **Windows**, and **Linux**.
-
+A modern starter template for building cross-platform desktop apps using **Electron**, **React 19**, **TypeScript**, and **Vite**. It supports fast development with HMR and production-ready builds for **macOS**, **Windows**, and **Linux**.
 ---
 
 ## 📦 Project Setup
@@ -11,8 +9,8 @@ A modern starter template for building desktop apps using **Electron**, **React 
 Clone the repository and install dependencies:
 
 ```bash
-git clone <repository_url>
-cd <project_directory>
+git clone https://github.com/Kap-taan/electron-starter.git <CUSTOM_NAME>
+cd <CUSTOM_NAME>
 npm install
 ```
 
@@ -20,16 +18,24 @@ npm install
 
 ## 🗂️ Project Structure
 
-* `src/`: Source code for the React frontend and Electron main process.
-* `tsconfig.app.json`: TypeScript config for the React app.
-* `src/electron/tsconfig.json`: TypeScript config for the Electron process.
-* `tsconfig.node.json`: TypeScript config for Vite/Electron configs.
+- `src/`: Source code for the React frontend and Electron main process.
+- `tsconfig.app.json`: TypeScript config for the React app.
+- `src/electron/tsconfig.json`: TypeScript config for the Electron main process.
+- `tsconfig.node.json`: TypeScript config used by tooling like Vite and Electron.
 
 ---
 
 ## 🔧 Scripts
 
 ### 🧪 Development
+
+#### `dev`
+
+```bash
+npm run dev
+```
+
+Runs both the React and Electron development servers in parallel using `npm-run-all`.
 
 #### `dev:react`
 
@@ -45,7 +51,7 @@ Starts the Vite development server with Hot Module Replacement (HMR) for React.
 npm run dev:electron
 ```
 
-Launches the Electron app (should be run after starting `dev:react`).
+Transpiles the Electron code and launches the Electron app in development mode.
 
 ---
 
@@ -57,7 +63,7 @@ Launches the Electron app (should be run after starting `dev:react`).
 npm run build
 ```
 
-Builds the production React app using Vite and cleans up TypeScript build info.
+Cleans TypeScript build info and builds the React app using Vite.
 
 #### `transpile:electron`
 
@@ -95,44 +101,23 @@ npm run dist:linux
 
 Builds and packages the app for **Linux (x64)**.
 
----
+> These use [`electron-builder`](https://www.electron.build/) for bundling and packaging.
 
-### 🔍 Preview
+## 📚 Technologies Used
 
-```bash
-npm run preview
-```
-
-Previews the production build of the React app in the browser (useful for frontend testing).
-
----
-
-### 🧹 Lint
-
-```bash
-npm run lint
-```
-
-Runs ESLint to check for code issues and enforce style.
-
----
-
-## ⚙️ Customize for Your Project
-
-* **Install Libraries**: Add routing, state management, or UI libraries as needed.
-
-  ```bash
-  npm install react-router-dom
-  ```
-
-* **Electron Configuration**: Modify `src/electron/main.ts` for window settings, menus, etc.
-
-* **TypeScript Settings**: Adjust `tsconfig.app.json` or `src/electron/tsconfig.json` for your needs.
+- **React 19**
+- **Electron 36**
+- **TypeScript**
+- **Vite 6**
+- **ESLint**
+- **electron-builder**
+- **npm-run-all**
+- **cross-env**
 
 ---
 
 ## 📝 Final Notes
 
-This starter provides a clean and flexible foundation to build modern cross-platform desktop apps. With a streamlined workflow, you can rapidly prototype, develop, and package your app for multiple OS targets.
+This starter template helps you kickstart modern desktop app development using a clean, modular structure. It supports fast iteration in development and simple packaging for distribution across all major platforms.
 
 ---
